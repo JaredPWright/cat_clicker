@@ -1,0 +1,6 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using TMPro;
+public class dOiTaLL : MonoBehaviour{public SpriteRenderer sRENDERER;public Animator aNIMATOR;public AudioSource bonk;public TextMeshProUGUI sCOREtEXT1;public TextMeshProUGUI sCOREtEXT2;public TextMeshProUGUI tIMERtEXT;public int sCORE = 0;public int hIGHsCORE;public float time = 30.0f;void Start(){sRENDERER = GetComponent<SpriteRenderer>();if(PlayerPrefs.HasKey("highscore"))hIGHsCORE = PlayerPrefs.GetInt("highscore");else PlayerPrefs.SetInt("highscore", 0);}void Update(){if(Input.GetButtonDown("Fire1")){aNIMATOR.SetTrigger("sHOOT");bonk.PlayOneShot(bonk.clip);sCORE++;}time-=Time.deltaTime;tIMERtEXT.text = "Time: " + time.ToString();sCOREtEXT1.text = "Score: " + sCORE.ToString();if(sCORE >= hIGHsCORE)hIGHsCORE = sCORE;sCOREtEXT2.text = "High Score: " + hIGHsCORE.ToString();}public IEnumerator countdown(){yield return new WaitForSeconds(30.0f);PlayerPrefs.SetInt("highscore", hIGHsCORE);SceneManager.LoadScene("MainMenu");}}
