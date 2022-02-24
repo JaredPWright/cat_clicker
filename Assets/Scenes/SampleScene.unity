@@ -560,7 +560,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sRENDERER: {fileID: 0}
   aNIMATOR: {fileID: 701712852}
-  bonk: {fileID: 0}
+  bonk: {fileID: 701712854}
   sCOREtEXT1: {fileID: 641529024}
   sCOREtEXT2: {fileID: 815555032}
   tIMERtEXT: {fileID: 1172292417}
@@ -578,7 +578,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3dc105e924a9ac7468071355ce3bd1db, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
