@@ -6,23 +6,20 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     public static int health = 3;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public ParticleSystem psys;
 
     // Update is called once per frame
     void Update()
     {
         if(health <= 0)
-            Death();
+            StartCoroutine("PlayerLose");
     }
 
-    void Death()
+    private IEnumerator PlayerLose()
     {
-        Destroy(this.gameObject);
-        SceneManager.LoadScene("GameOver");
+        psys.Play();
+        yield return new WaitForSeconds(5.0f);
+        SceneManager.LoadScene("MainMenu");
     }
+
 }
